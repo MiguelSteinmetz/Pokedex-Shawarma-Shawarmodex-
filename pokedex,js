@@ -12,4 +12,4 @@ const pokemon = {
     email: "Email de usuario",
   }
 
-  let favoritos = [] //array com os id dos pokemons favoritados
+  let favoritos = [] //array com os id dos pokemons favoritados 
