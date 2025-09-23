@@ -1,0 +1,16 @@
+const pokemon = { 
+    id: 1,
+    nome: "Nome Pokemon",
+    tipos: ["TipoPokemon", "TipoPokemon"],
+    imagemUrl: "Imagem pokemon",
+    Evoluçoes: "Evoluçao pokemon",
+    habilidades: "habilidades do pokemon"
+  }
+  // Objeto do Usuario que seria cadastrado
+  const usuario = {
+    id: "Id usuario",
+    nomeDeUsuario: "Nome De usuario",
+    email: "Email de usuario",
+  }
+
+  let favoritos = [] //array com os id dos pokemons favoritados
