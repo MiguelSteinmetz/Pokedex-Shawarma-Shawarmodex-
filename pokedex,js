@@ -2,9 +2,8 @@ const pokemon = {
     id: 1,
     nome: "Nome Pokemon",
     tipos: ["TipoPokemon", "TipoPokemon"],
-    imagemUrl: "Imagem pokemon",
+    imagem: "Imagem pokemon",
     Evoluçoes: "Evoluçao pokemon",
-    habilidades: "habilidades do pokemon"
   }
   // Objeto do Usuario que seria cadastrado
   const usuario = {
