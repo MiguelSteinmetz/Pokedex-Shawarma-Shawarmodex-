@@ -1,4 +1,4 @@
-
+Codigo js: 
 const pokemon = { 
     id: 1,
     nome: "Nome Pokemon",
@@ -13,4 +13,7 @@ const pokemon = {
     email: "Email de usuario",
   }
 
-  let favoritos = [] //array com os id dos pokemons favoritados 
+  let favoritos = [] //array com os id dos pokemons favoritados  
+
+Figma:
+https://www.figma.com/design/kld1QZjPA331SMCOLif0Dg/Untitled?node-id=0-1&t=4tgiVRSDULlnrtwC-1
