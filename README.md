@@ -1,4 +1,16 @@
 
-teste
+const pokemon = { 
+    id: 1,
+    nome: "Nome Pokemon",
+    tipos: ["TipoPokemon", "TipoPokemon"],
+    imagem: "Imagem pokemon",
+    Evoluçoes: "Evoluçao pokemon",
+  }
+  // Objeto do Usuario que seria cadastrado
+  const usuario = {
+    id: "Id usuario",
+    nomeDeUsuario: "Nome De usuario",
+    email: "Email de usuario",
+  }
 
-tela login https://www.figma.com/site/NA0L4dM1wjbPQflgSAr4rJ/Sem-t%C3%ADtulo?t=pO393iGC2AiPvJUR-1
+  let favoritos = [] //array com os id dos pokemons favoritados 
