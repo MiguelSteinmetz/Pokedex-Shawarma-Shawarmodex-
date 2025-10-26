@@ -1,0 +1,584 @@
+/* Definição das Variáveis CSS para o Modo Claro  */
+:root {
+    /* Cores de Fundo */
+    --bg-tela: black;
+    --bg-body: url(loginpokemon.jpg);
+    --bg-main: rgb(255, 255, 255);
+    --border-main: rgb(0, 247, 255);
+    --bg-box: rgba(0, 38, 255, 0.336);
+    --bg-card: rgba(255, 255, 255, 0.644);
+    --border-card: #ddd;
+    --bg-header-span: rgb(0, 255, 234);
+    --bg-opcoes-menu: rgb(126, 252, 246);
+    --bg-search-input: rgb(255, 255, 255);
+    --bg-botao-sair: rgb(73, 73, 73);
+    --bg-opcao: rgb(0, 46, 114);
+
+    /* Cores de Texto e Componentes */
+    --text-color-main: #000000;
+    --text-color-card: rgb(3, 3, 3);
+    --text-color-opcoes: rgb(10, 10, 10);
+    --color-search-input: #333;
+    --border-search-input: black;
+    --text-botao-sair: rgb(255, 253, 253);
+  
+}
+
+/* Definição das Variáveis CSS para o Modo Escuro */
+body.dark-mode {
+    --bg-body: url(loginpokemon.jpg);
+    --bg-main: rgb(18, 18, 18);
+    --border-main: rgb(255, 0, 0);
+    --bg-box: rgba(255, 0, 0, 0.377);
+    --bg-card: rgba(60, 60, 60, 0.9);
+    --border-card: #444;
+    --bg-header-span: rgb(141, 0, 0);
+    --bg-opcoes-menu: rgb(50, 50, 50);
+    --bg-search-input: #424242;
+    --bg-botao-sair: rgb(50, 50, 50);
+   
+
+    /* Cores de Texto e Componentes */
+    --text-color-main: #e0e0e0;
+    --text-color-card: #e0e0e0;
+    --text-color-opcoes: #00af00;
+    --color-search-input: #e0e0e0;
+    --border-search-input: #666;
+    --text-botao-sair: rgb(255, 253, 253);
+
+}
+
+
+/* Estilos atualizados para usar variáveis */
+
+    body {
+      background-color: var(--bg-tela);  
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-image: var(--bg-body); /* Usa a variável */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+
+/*Estilo Conteiner "Vermelho" O conteiner que engloba todas os outros*/
+.conteiner-vermelho{
+    background-color: var(--bg-main);
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    border: 8px solid var(--border-main);
+    border-radius: 15px;
+    flex: 1;
+
+
+}
+
+
+/* Estilos do cabeçalho  */
+.header{
+    display: flex;
+    flex-direction: column; /* Organiza os filhos em coluna (Linhas) */
+    gap: 15px;
+    padding: 10px;
+    position: relative;
+    z-index: 20;
+}
+
+/* Container da Linha Principal (Logo, Título, Botões) */
+.header-principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    gap: 15px;
+}
+
+/* Container da Linha Secundária (Busca e Opções) */
+.header-secundario {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 30px;
+    padding-bottom: 30px; 
+}
+
+
+/* Estilos do Título  */
+.header h1.Titulo {
+  
+    height: max-content;
+    flex-grow: 1; 
+    text-align: center;
+    margin: 0; 
+    position: static; 
+}
+
+.header h1.Titulo span {
+    background-color: var(--bg-header-span);
+    padding: 8px 40px;
+    border-radius: 10px;
+    color: var(--text-color-main); 
+}
+
+
+/* Estilo do Botao "VOLTAR" (agora botões de ação) */
+.botao-voltar{
+    display: flex;
+    justify-content: end;
+    gap: 10px; 
+    padding: 0; /* Removido padding que causava desalinhamento */
+}
+.botao-voltar button{
+    color: var(--text-botao-sair);
+    background-color: var(--bg-botao-sair);
+    width: auto; /* Permite que o texto se ajuste */
+    padding: 0 10px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 1em;
+
+}
+/* Estilo para o novo botão de tema */
+#theme-toggle {
+    width: auto !important; 
+    padding: 0 10px;
+}
+    .botao-voltar a:link,
+    .botao-voltar a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+.botao-voltar button:hover{
+    transform: scale(1.07);
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+
+/* Estrutura e estilo da Box, onde fica os card dos pokemons */
+.box-2 {
+    background-color: var(--bg-box);
+    flex-grow: 1;
+    display: grid;
+
+   grid-template-columns: repeat(3, 1fr);
+    gap: 15px; 
+    padding: 15px;
+    height: 60vh;
+    overflow-y: auto;
+    border: 2px solid black; 
+}
+.box-2 a {
+    display: contents;
+}
+.box-2 a:link,
+.box-2 a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Estilos dos Card Dos pokemons */
+.pokemon-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-card); 
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+}
+.pokemon-card img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+.pokemon-card:hover {
+    transform: scale(1.03);
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+
+/* Estilo do CheckBox*/
+.favorite-checkbox {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fafafa;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.2s;
+    display: inline-block;
+}
+.favorite-checkbox:checked {
+    background-color: #ffd700;
+    border-color: #b89c00;
+}
+
+
+/* Estilos dos Nomes dos pokemons */
+.nomes{
+    font-size: 0.9em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--text-color-card);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+}
+
+
+/*Estilos dos Tipos dos pokemons*/
+.tipo {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    color: white;
+    text-transform: capitalize;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+}
+.planta { background-color: #78C850; }
+.veneno { background-color: #A040A0; }
+.fogo { background-color: #F08030; }
+.voador { background-color: #A890F0; }
+.água { background-color: #6890F0; }
+.inseto { background-color: #A8B820; }
+.normal { background-color: #A8A878; }
+
+
+/*Estilo do Logo  */
+.logo{
+    display: flex;
+    gap: 15px;   
+    width: 150px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+}
+.logo img {
+    width: 100%; 
+    height: 100%;
+    object-fit: contain; 
+}
+
+
+
+
+/* Estilo da Barra de pesquisa*/
+#search-input {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 2px solid var(--border-search-input);
+    border-radius: 10px;
+    background-color: var(--bg-search-input);
+    color: var(--color-search-input);
+    width: 300px; 
+}
+#search-input::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+
+/* Estilos do Menu  */
+.menu {
+    position: relative; 
+}
+
+/* O botão "☰ Opções" */
+.botaoOpcao {
+    background-color:rgb(67, 197, 55);;
+    color: rgb(0, 0, 0);
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.botaoOpcao:hover {
+    background-color: #ffe600;
+}
+
+
+/* Estiliza Dentro do botao 'Opçoes' */
+.opcoes {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 110%;
+    background-color: var(--bg-opcoes-menu);
+    min-width: 180px; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    z-index: 10;
+}
+
+/* Estiliza as opçoes de dentro do menu */
+.opcoes a {
+    color: var(--text-color-opcoes);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    text-align: left;
+
+}
+.opcoes a:hover {
+    background-color: #f1f1f1;
+}
+
+.opcoes.mostrar {
+    display: block;
+}
+
+
+.filtrotipos {
+    display: none; 
+    position: fixed; 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    justify-content: center;
+    align-items: center;
+}
+
+/* A caixa branca/escura  */
+.conteudoFiltroTipos {
+    background-color: var(--bg-main);
+    color: var(--text-color-main);
+    margin: auto;
+    padding: 20px;
+    border: 1px solid var(--border-card);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+/* Botão de fechar (X) */
+.fechar-modal {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.fechar-modal:hover,
+.fechar-modal:focus {
+    color: var(--text-color-main);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Container onde os botões de tipo ficarão */
+#tipo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Estilo para cada botão de tipo dentro do modal */
+.botao-tipo {
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 1em;
+    color: white;
+    text-transform: capitalize;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.botao-tipo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Aqui re-utilizamos as classes de tipo que você já criou 
+   para colorir os botões automaticamente!
+*/
+.botao-tipo.planta { background-color: #78C850; }
+.botao-tipo.veneno { background-color: #A040A0; }
+.botao-tipo.fogo { background-color: #F08030; }
+.botao-tipo.voador { background-color: #A890F0; }
+.botao-tipo.água { background-color: #6890F0; }
+.botao-tipo.inseto { background-color: #A8B820; }
+.botao-tipo.normal { background-color: #A8A878; }
+
+footer {
+    justify-content: last baseline;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background-color: black;
+    color: whitesmoke;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+
+ 
+
+/* Para telas até 1200px (Tablets e Desktops menores) */
+@media (max-width: 1200px) {
+    
+    .box-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Para telas até 768px (Tablets em modo retrato) */
+@media (max-width: 768px) {
+    .conteiner-vermelho {
+        width: 95%; 
+        padding: 15px;
+    }
+    
+    /* Cabeçalho */
+    .header-principal {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* O título com o span */
+    .header h1.Titulo span {
+        padding: 8px 20px; 
+        font-size: 1.2em; 
+    }
+
+    /* O grupo de botões de ação */
+    .botao-voltar {
+        justify-content: center; 
+    }
+
+    /* Linha de busca e opções */
+    .header-secundario {
+        flex-direction: column; 
+        gap: 15px;
+        padding-bottom: 20px;
+    }
+
+    /* Barra de pesquisa */
+    #search-input {
+        width: 90%; 
+        max-width: 350px;
+    }
+
+    /* Logo */
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    /* Box de Cards */
+    .box-2 {
+        grid-template-columns: repeat(2, 1fr); 
+        height: 50vh; 
+    }
+
+    /* Cards */
+    .pokemon-card img {
+        width: 60px; 
+    }
+
+    /* Rodapé */
+    footer {
+        font-size: 0.85em; 
+        padding: 12px 0;
+    }
+
+}
+
+/* Para telas até 480px */
+@media (max-width: 480px) {
+    /* Container principal */
+    .conteiner-vermelho {
+        margin: 20px auto; 
+        padding: 10px;
+    }
+
+    /* Título */
+    .header h1.Titulo span {
+        padding: 5px 15px;
+        font-size: 1em; 
+    }
+
+    /* Box de Cards */
+    .box-2 {
+        grid-template-columns: 1fr; 
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    /* Cards */
+    .pokemon-card {
+        flex-direction: row; 
+        justify-content: flex-start;
+        gap: 15px;
+        padding: 5px;
+    }
+    
+    .pokemon-card img {
+        width: 50px; 
+        margin-bottom: 0;
+    }
+
+    /* Nomes e Tipos */
+    .nomes {
+        font-size: 1em;
+        flex-grow: 1; 
+        text-align: left;
+    }
+
+    .tipo {
+        padding: 3px 8px;
+        font-size: 0.8em;
+    }
+
+    /* Checkbox */
+    .favorite-checkbox {
+        width: 20px;
+        height: 20px;
+    }
+    
+    /* Modal */
+    .conteudoFiltroTipos {
+        width: 95%; 
+        padding: 15px;
+    }
+
+    /* Botão de Opções */
+    .botaoOpcao {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+
+    /* Rodapé */
+    footer {
+        font-size: 0.8em;
+        padding: 10px 5px;
+    }
+
+}
