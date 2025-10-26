@@ -1,0 +1,97 @@
+body {
+      margin: 0;
+      min-height: 100vh; /* Alterado de height: 100vh para min-height: 100vh */
+      display: flex;
+      justify-content: center;  /* centraliza horizontalmente */
+      align-items: center;      /* centraliza verticalmente */
+      background-image: url(loginpokemon.jpg); /* caminho da imagem */
+      background-size: cover;   /* faz a imagem cobrir toda a tela */
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    .login {
+      background-color: rgb(0, 0, 0);
+      color: rgb(228, 167, 0);
+      padding: 30px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      width: 300px; /* Adicionado um width base */
+      max-width: 90%; /* Garante que não ultrapasse a tela */
+    }
+
+    
+    .login input{
+     color: rgb(0, 0, 0);
+      margin:  5px;
+      padding: 5px;
+      margin: auto;
+      display: block;
+      width: 90%; /* Garante que o input ocupe o espaço */
+    }
+
+  .buttons {
+    display: flex;
+    justify-content: center; /* centraliza os botões */
+    gap: 15px;               /* espaço entre eles */
+    margin-top: 15px;
+  }
+  
+    /* Estilo base dos botões */
+    .buttons button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      color: white;
+      transition: 0.3s;
+      flex-grow: 1; /* Permite que os botões cresçam igualmente */
+      max-width: 150px; /* Limite de largura para desktop */
+    }
+
+button.entrar {
+  background-color: rgb(228, 167, 0); 
+}
+
+button.criar {
+  background-color: rgb(228, 167, 0); 
+}
+
+/* Efeito hover */
+button.entrar:hover {
+  background-color: #dcdf4f;}
+
+button.criar:hover {
+  background-color: #dcdf4f;
+}
+
+
+/* RESPONSIVIDADE
+
+/* Para telas até 480px (Smartphones) */
+@media (max-width: 480px) {
+    body {
+        /* Remove a centralização vertical em telas muito pequenas, 
+           permitindo que o conteúdo flua se a tela for pequena demais, 
+           mas min-height já ajuda. */
+        align-items: flex-start; 
+        padding-top: 50px; /* Adiciona um espaço no topo */
+    }
+    
+    .login {
+        padding: 20px;
+        margin: 0 auto;
+        width: 90%; /* Ocupa 90% da largura da tela */
+    }
+    
+    .buttons {
+        flex-direction: column; /* Coloca os botões em coluna */
+        gap: 10px;
+    }
+
+    .buttons button {
+        max-width: 100%; /* Ocupa a largura total do .login */
+    }
+}

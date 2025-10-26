@@ -1,0 +1,104 @@
+/* Isso centraliza o card no meio da tela (usando o 'body' do pokedex.css) */
+#detalhe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.detalhe-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 90%;
+    max-width: 600px; /* Largura máxima do card */
+    padding: 30px;
+    border-radius: 20px;
+    border: 3px solid black;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.detalhe-card h1 {
+    margin-top: 0;
+    color: #333;
+}
+
+.detalhe-card img {
+    width: 60%;
+    max-width: 300px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.tipos-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.descricao {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.descricao h2 {
+    margin-top: 0;
+}
+
+.botao-voltar-detalhes {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background-color: rgb(0, 87, 248);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background-color 0.2s;
+}
+
+.botao-voltar-detalhes:hover {
+    background-color: #52a8f3;
+}
+
+.detalhe-card.erro {
+    background-color: #ffdddd;
+    border-color: #c00;
+}
+
+
+ /*  RESPONSIVIDADE 
+
+ 
+/* Para telas até 600px (Smartphones e Tablets pequenos) */
+@media (max-width: 600px) {
+    .detalhe-card {
+        width: 95%; /* Ocupa quase a largura total da tela */
+        padding: 20px 15px; /* Reduz o padding interno */
+        border-width: 2px;
+    }
+
+    .detalhe-card h1 {
+        font-size: 1.5em; /* Reduz um pouco o título */
+    }
+
+    .detalhe-card img {
+        width: 80%; /* Aumenta um pouco a imagem para telas menores */
+        max-width: 250px;
+    }
+
+    .descricao {
+        padding: 10px; /* Reduz o padding da descrição */
+        font-size: 0.9em;
+    }
+
+    .botao-voltar-detalhes {
+        padding: 10px 20px; /* Reduz um pouco o botão de voltar */
+        font-size: 0.9em;
+    }
+}
