@@ -1,0 +1,95 @@
+body {
+      margin: 0;
+      min-height: 100vh; 
+      display: flex;
+      justify-content: center;    
+      align-items: center;      
+      background-image: url(loginpokemon.jpg);
+      background-size: cover;   
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    .login {
+      background-color: rgb(0, 0, 0);
+      color: rgb(228, 167, 0);
+      padding: 30px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      width: 300px; 
+      max-width: 90%; 
+    }
+
+    
+    .login input{
+     color: rgb(0, 0, 0);
+      margin:  5px;
+      padding: 5px;
+      margin: auto;
+      display: block;
+      width: 90%; 
+    }
+
+  .buttons {
+    display: flex;
+    justify-content: center; 
+    gap: 15px;               
+    margin-top: 15px;
+  }
+  
+    /* Estilo base dos botões */
+    .buttons button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      color: white;
+      transition: 0.3s;
+      flex-grow: 1; 
+      max-width: 150px;
+    }
+
+button.entrar {
+  background-color: rgb(228, 167, 0); 
+}
+
+button.criar {
+  background-color: rgb(228, 167, 0); 
+}
+
+/* Efeito hover */
+button.entrar:hover {
+  background-color: #dcdf4f;}
+
+button.criar:hover {
+  background-color: #dcdf4f;
+}
+
+
+
+
+/* Para telas até 480px (Celulares) */
+@media (max-width: 480px) {
+    body {
+       
+        align-items: flex-start; 
+        padding-top: 50px; 
+    }
+    
+    .login {
+        padding: 20px;
+        margin: 0 auto;
+        width: 90%; 
+    }
+    
+    .buttons {
+        flex-direction: column; 
+        gap: 10px;
+    }
+
+    .buttons button {
+        max-width: 100%; 
+    }
+}

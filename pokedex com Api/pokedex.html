@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharmodex</title>
+    <link rel="stylesheet" href="pokedex.css">
+</head>
+<body>
+    
+    <div class="conteiner-vermelho">
+        <div class="header">
+            
+            <div class="header-principal">
+                <div class="logo">
+                   <img src="fundos.png" alt="Logo">
+                </div>
+
+                <h1 class="Titulo">
+                    <span>Sharmodex</span>
+                </h1>
+
+                <div class="botao-voltar"> 
+                    <button id="theme-toggle">Modo Escuro</button>
+                    <button id="botao-sair">Sair</button>
+                </div>
+            </div>
+            
+            <div class="header-secundario">
+                <input type="text" id="search-input" placeholder="Buscar Pokémon...">
+           
+                <div class="menu">
+                    <button class="botaoOpcao">☰ Opções</button>
+                    <div class="opcoes">
+                        <a href="#" id="mostrarTodos">Mostrar Todos</a>
+                        <a href="#" id="mostrarFavoritos">Mostrar Favoritos</a>
+                        <a href="#" id="filtroTipo">Filtro por Tipo</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+         <div class="area-cards">
+    
+    <div id="loading-overlay">
+        <img src="R.png" alt="Carregando..." class="spinner-pokebola">
+        <span class="texto-carregando">Carregando...</span>
+    </div>
+
+    <div class="box-2">    
+    </div>
+
+</div>
+    </div>
+
+    <div id="tela-tipos" class="filtrotipos">
+        <div class="conteudoFiltroTipos">
+            <span class="fechar-modal">&times;</span>
+            <h2>Filtrar por Tipo</h2>
+            <div id="tipo-container">
+                </div>
+        </div>
+    </div>
+
+    <footer>
+        Erik, Majd, Miguel, Vinicius. &copy; 2025
+    </footer>
+    
+    <script src="pokedex.js"></script>
+</body>
+</html>

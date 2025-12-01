@@ -1,0 +1,447 @@
+/* Definição das Variáveis CSS para o Modo Claro */
+:root {
+    /* Cores de Fundo */
+    --bg-tela: black;
+    --bg-body: url(loginpokemon.jpg);
+    --bg-main: rgb(255, 255, 255);
+    --border-main: rgb(0, 247, 255);
+    --bg-box: rgba(0, 38, 255, 0.336);
+    --bg-card: rgba(255, 255, 255, 0.644);
+    --border-card: #ddd;
+    --bg-header-span: rgb(0, 255, 234);
+    --bg-opcoes-menu: rgb(126, 252, 246);
+    --bg-search-input: rgb(255, 255, 255);
+    --bg-botao-sair: rgb(73, 73, 73);
+    --bg-opcao: rgb(0, 46, 114);
+
+    /* Cores de Texto e Componentes */
+    --text-color-main: #000000;
+    --text-color-card: rgb(3, 3, 3);
+    --text-color-opcoes: rgb(10, 10, 10);
+    --color-search-input: #333;
+    --border-search-input: black;
+    --text-botao-sair: rgb(255, 253, 253);
+}
+
+/* Definição das Variáveis CSS para o Modo Escuro */
+body.dark-mode {
+    --bg-body: url(loginpokemon.jpg);
+    --bg-main: rgb(18, 18, 18);
+    --border-main: rgb(255, 0, 0);
+    --bg-box: rgba(255, 0, 0, 0.377);
+    --bg-card: rgba(60, 60, 60, 0.9);
+    --border-card: #444;
+    --bg-header-span: rgb(141, 0, 0);
+    --bg-opcoes-menu: rgb(50, 50, 50);
+    --bg-search-input: #424242;
+    --bg-botao-sair: rgb(50, 50, 50);
+
+    /* Cores de Texto e Componentes */
+    --text-color-main: #e0e0e0;
+    --text-color-card: #e0e0e0;
+    --text-color-opcoes: #00af00;
+    --color-search-input: #e0e0e0;
+    --border-search-input: #666;
+    --text-botao-sair: rgb(255, 253, 253);
+}
+
+/* --- ESTILOS GERAIS --- */
+body {
+    background-color: var(--bg-tela);  
+    margin: 0;
+    min-height: 100vh; /* Alterado para min-height para evitar cortes */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: var(--bg-body);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo Conteiner "Vermelho" */
+.conteiner-vermelho {
+    background-color: var(--bg-main);
+    width: 80%;
+    margin: 30px auto; /* Reduzi um pouco a margem */
+    padding: 20px;
+    border: 8px solid var(--border-main);
+    border-radius: 15px;
+    /* Flex para organizar header em cima e cards embaixo */
+    display: flex;
+    flex-direction: column;
+    height: 80vh; /* Altura fixa para o conteiner principal */
+}
+
+/* --- HEADER --- */
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    position: relative;
+    z-index: 20;
+}
+
+.header-principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    gap: 15px;
+}
+
+.header-secundario {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 30px;
+    padding-bottom: 20px; 
+}
+
+/* Título */
+.header h1.Titulo {
+    height: max-content;
+    flex-grow: 1; 
+    text-align: center;
+    margin: 0; 
+}
+
+.header h1.Titulo span {
+    background-color: var(--bg-header-span);
+    padding: 8px 40px;
+    border-radius: 10px;
+    color: var(--text-color-main); 
+}
+
+/* Botões Voltar/Sair/Tema */
+.botao-voltar {
+    display: flex;
+    justify-content: end;
+    gap: 10px; 
+    padding: 0; 
+}
+.botao-voltar button {
+    color: var(--text-botao-sair);
+    background-color: var(--bg-botao-sair);
+    width: auto; 
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-size: 0.9em;
+    border: none;
+    cursor: pointer;
+}
+.botao-voltar button:hover {
+    transform: scale(1.05);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* --- NOVA ÁREA WRAPPER (Cards + Loading) --- */
+.area-cards {
+    position: relative; /* Importante: Define o limite para o loading */
+    flex-grow: 1;       /* Ocupa todo o espaço restante do conteiner */
+    width: 100%;
+    display: flex;      
+    overflow: hidden;   
+    border: 2px solid black; 
+    background-color: var(--bg-box);
+}
+
+/* --- BOX DE CARDS --- */
+.box-2 {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    overflow-y: auto; /* Rolagem interna */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; 
+    box-sizing: border-box; /* Garante que padding não estoure a largura */
+}
+
+/* Estilos dos Cards */
+.pokemon-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-card); 
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.box-2 a {
+    display: contents; /* Mantém o link invisível na estrutura do grid */
+    text-decoration: none;
+    color: inherit;
+}
+
+.pokemon-card img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+.pokemon-card:hover {
+    transform: scale(1.03);
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+/* Checkbox Favorito */
+.favorite-checkbox {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fafafa;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+.favorite-checkbox:checked {
+    background-color: #ffd700;
+    border-color: #b89c00;
+}
+
+/* Textos do Card */
+.nomes {
+    font-size: 0.9em;
+    font-family: Verdana, sans-serif;
+    color: var(--text-color-card);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Tipos */
+.tipo {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    color: white;
+    text-transform: capitalize;
+    font-weight: bold;
+    margin: 0 2px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+.planta { background-color: #78C850; }
+.veneno { background-color: #A040A0; }
+.fogo { background-color: #F08030; }
+.voador { background-color: #A890F0; }
+.água { background-color: #6890F0; }
+.inseto { background-color: #A8B820; }
+.normal { background-color: #A8A878; }
+.elétrico { background-color: #F8D030; }
+.terra { background-color: #E0C068; }
+.fada { background-color: #EE99AC; }
+.lutador { background-color: #C03028; }
+.psíquico { background-color: #F85888; }
+.pedra { background-color: #B8A038; }
+.aço { background-color: #B8B8D0; }
+.gelo { background-color: #98D8D8; }
+.fantasma { background-color: #705898; }
+.dragão { background-color: #7038F8; }
+
+/* Logo */
+.logo {
+    display: flex;
+    gap: 15px;   
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+.logo img {
+    width: 100%; 
+    height: 100%;
+    object-fit: contain; 
+}
+
+/* Barra de Pesquisa */
+#search-input {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 2px solid var(--border-search-input);
+    border-radius: 10px;
+    background-color: var(--bg-search-input);
+    color: var(--color-search-input);
+    width: 300px; 
+}
+
+/* Menu de Opções */
+.menu { position: relative; }
+
+.botaoOpcao {
+    background-color: rgb(67, 197, 55);
+    color: black;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.opcoes {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 110%;
+    background-color: var(--bg-opcoes-menu);
+    min-width: 180px; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    z-index: 10;
+}
+.opcoes.mostrar { display: block; }
+
+.opcoes a {
+    color: var(--text-color-opcoes);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+}
+.opcoes a:hover { background-color: rgba(255,255,255,0.2); }
+
+/* --- TELA DE CARREGAMENTO (LOADING) --- */
+#loading-overlay {
+    position: absolute; /* Segredo: Absolute relativo à area-cards */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Fundo semi-transparente */
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+    border-radius: 0 0 8px 8px; /* Arredonda cantos inferiores se precisar */
+}
+
+.spinner-pokebola {
+    width: 60px;
+    height: 60px;
+    animation: girar 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+.texto-carregando {
+    color: white;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+    animation: piscar 1.5s infinite;
+}
+
+@keyframes girar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes piscar {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* --- MODAL DE FILTRO --- */
+.filtrotipos {
+    display: none; 
+    position: fixed; 
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.conteudoFiltroTipos {
+    background-color: var(--bg-main);
+    color: var(--text-color-main);
+    padding: 20px;
+    border: 2px solid var(--border-card);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    text-align: center;
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 10px; right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #888;
+}
+
+#tipo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+.botao-tipo {
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: black;
+    color: whitesmoke;
+    font-size: 0.8em;
+    margin-top: auto; /* Empurra para o final */
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 1200px) {
+    .box-2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .conteiner-vermelho {
+        width: 95%; 
+        padding: 10px;
+    }
+    .header-principal {
+        flex-direction: column;
+        text-align: center;
+    }
+    .header-secundario {
+        flex-direction: column; 
+        gap: 15px;
+    }
+    #search-input { width: 90%; }
+    .box-2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+    .box-2 { grid-template-columns: 1fr; }
+    .pokemon-card {
+        flex-direction: row; 
+        justify-content: flex-start;
+        gap: 15px;
+    }
+    .pokemon-card img {
+        width: 50px; 
+        margin-bottom: 0;
+    }
+}
